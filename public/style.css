@@ -84,7 +84,7 @@ body {
   position: fixed;
   top: 55px;
   right: 40px;
-  display: none;
+  /* display: none; */
   background-color: #fff;
   box-shadow: 2px 2px 2px #B3B3B3;
   padding: 15px;

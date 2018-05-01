@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/CarlWnn/shopping-cart/issues"
   },
-  "homepage": "https://github.com/CarlWnn/shopping-cart#readme"
+  "homepage": "https://github.com/CarlWnn/shopping-cart#readme",
+  "devDependencies": {}
 }
