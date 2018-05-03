@@ -1,8 +1,6 @@
 // an array with all of our cart items
 var cart = [];
 
-
-
 var updateCart = function () {
   // TODO: Write this function. In this function we render the page.
   // Meaning we make sure that all our cart items are displayed in the browser.
@@ -32,23 +30,17 @@ var _findIndex= function(item_name){
   return -1;
 }
 
-var addItem = function (name, price) {
+var addItem = function (item) {
   // TODO: Write this function. Remember this function has nothing to do with display. 
   // It simply is for adding an item to the cart array, no HTML involved - honest ;-)
-      var index= _findIndex(name);
+      var index= _findIndex(item.name);
       if (index!== -1){ // item in cart
         cart[index].quantity ++;
-        //console.log(item.quantity);
       }else{
-        var item= {
-          name: name,
-          price: price,
-          quantity: 1,
-        }
+        item.quantity=1;
         cart.push(item);
       }
- 
-}
+ }
 
 var clearCart = function () {
   // TODO: Write a function that clears the cart ;-)
@@ -73,15 +65,15 @@ $('.add-to-cart').on('click', function () {
   // TODO: get the "item" object from the page
 
     // var item = {};
-    //item.name= $(this).parent().closest('.item').data().name;
-     //item.price= $(this).parent().closest('.item').data().price;
+    // item.name= $(this).closest('.item').data().name;
+    // item.price=$(this).closest('.item').data().price;
 
      var item= $(this).closest('.item'); 
-     item_name= item.data().name;
-     item_price= item.data().price;
-     //console.log(item_name);
-     addItem(item_name, item_price);
-     updateCart();
+     item.name= item.data().name;
+     item.price= item.data().price;
+      
+    addItem(item);
+    updateCart();
 });
 
 
